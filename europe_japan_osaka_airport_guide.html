@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Europe × Japan Osaka Cultural Guide</title>
+  <style>
+    :root {
+      --navy: #172554;
+      --blue: #2563eb;
+      --sky: #dbeafe;
+      --cream: #fff7ed;
+      --orange: #f97316;
+      --green: #16a34a;
+      --red: #ef4444;
+      --purple: #7c3aed;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --card: rgba(255, 255, 255, 0.92);
+      --line: rgba(30, 64, 175, 0.16);
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Avenir Next", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 34%),
+        radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 32%),
+        linear-gradient(180deg, #eff6ff 0%, #fff7ed 45%, #f8fafc 100%);
+      line-height: 1.65;
+    }
+
+    .airport-strip {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(23, 37, 84, 0.94);
+      color: white;
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .airport-strip-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+
+    .airport-code {
+      font-weight: 900;
+      background: white;
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 4px 10px;
+      white-space: nowrap;
+    }
+
+    .mini-nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .mini-nav a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      padding: 4px 10px;
+      white-space: nowrap;
+      font-size: 0.78rem;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 18px 30px;
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(239,246,255,0.92));
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "OSAKA";
+      position: absolute;
+      right: -18px;
+      bottom: -42px;
+      font-size: 7.5rem;
+      font-weight: 1000;
+      letter-spacing: -0.08em;
+      color: rgba(37, 99, 235, 0.07);
+      line-height: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: var(--navy);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      line-height: 0.95;
+      margin: 0 0 18px;
+      color: var(--navy);
+      letter-spacing: -0.07em;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      color: #334155;
+      max-width: 760px;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-highlight {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 16px;
+      min-height: 110px;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.55rem;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .mascot-card {
+      background: linear-gradient(150deg, #172554, #1d4ed8 55%, #f97316);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      color: white;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+    }
+
+    .mascot {
+      font-size: 7rem;
+      line-height: 1;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.16));
+    }
+
+    .speech {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 24px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .speech h2 {
+      margin: 0 0 8px;
+      font-size: 1.3rem;
+    }
+
+    .speech p {
+      margin: 0;
+      color: rgba(255,255,255,0.88);
+    }
+
+    section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px 18px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(1.7rem, 3.5vw, 2.7rem);
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      max-width: 520px;
+    }
+
+    .guide-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .topic {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(15,23,42,0.08);
+      overflow: hidden;
+    }
+
+    .topic-head {
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(219,234,254,0.8), rgba(255,247,237,0.82));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topic-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      background: white;
+      box-shadow: 0 10px 24px rgba(37,99,235,0.12);
+      flex: 0 0 auto;
+    }
+
+    .topic-head h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.45rem;
+      line-height: 1.15;
+    }
+
+    .topic-head small {
+      color: var(--muted);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .side {
+      padding: 22px;
+    }
+
+    .side:first-child {
+      border-right: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+    }
+
+    .side h4 {
+      margin: 0 0 12px;
+      font-size: 1.14rem;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .side p {
+      margin: 0 0 12px;
+      color: #475569;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+      font-weight: 800;
+      font-size: 0.82rem;
+    }
+
+    .manners {
+      padding: 0 22px 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .do, .careful {
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .do {
+      background: rgba(22, 163, 74, 0.08);
+      border: 1px solid rgba(22, 163, 74, 0.22);
+    }
+
+    .careful {
+      background: rgba(239, 68, 68, 0.07);
+      border: 1px solid rgba(239, 68, 68, 0.18);
+    }
+
+    .do h5, .careful h5 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .phrase-box {
+      background: var(--navy);
+      color: white;
+      padding: 22px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .phrase {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .phrase b {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .phrase span {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.9rem;
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(15,23,42,0.08);
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .summary-table th,
+    .summary-table td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .summary-table th {
+      background: var(--navy);
+      color: white;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .summary-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .summary-table td:first-child {
+      font-weight: 900;
+      color: var(--blue);
+      width: 34%;
+    }
+
+    .quiz {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .quiz-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 12px 28px rgba(15,23,42,0.08);
+    }
+
+    .quiz-card .q {
+      font-size: 2.4rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .quiz-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+    }
+
+    details {
+      margin-top: 12px;
+      border-radius: 16px;
+      background: #eff6ff;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    summary {
+      font-weight: 900;
+      color: #1d4ed8;
+    }
+
+    .final {
+      background: linear-gradient(135deg, #172554, #1d4ed8 55%, #f97316);
+      color: white;
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .final h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .final p {
+      margin: 0;
+      max-width: 850px;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.08rem;
+    }
+
+    .footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 26px 18px 48px;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 34px;
+      }
+
+      .hero-highlight,
+      .compare,
+      .manners,
+      .phrase-box,
+      .quiz {
+        grid-template-columns: 1fr;
+      }
+
+      .side:first-child {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-title {
+        display: block;
+      }
+
+      .section-title p {
+        margin-top: 8px;
+      }
+
+      .mascot-card {
+        min-height: auto;
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .airport-strip-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media print {
+      .airport-strip {
+        position: static;
+      }
+
+      body {
+        background: white;
+      }
+
+      .topic, .hero-card, .mascot-card, .final {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="airport-strip">
+    <div class="airport-strip-inner">
+      <div><span class="airport-code">KIX / OSAKA</span> Europe × Japan Cultural Manners Guide</div>
+      <nav class="mini-nav" aria-label="Guide sections">
+        <a href="#food">Food</a>
+        <a href="#public">Public</a>
+        <a href="#lines">Lines</a>
+        <a href="#transport">Transport</a>
+        <a href="#heritage">Heritage</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">🇪🇺 Welcome to Osaka! / ようこそ大阪へ</div>
+        <h1>Europe × Japan<br>Osaka Cultural Guide</h1>
+        <p class="hero-lead">
+          Europe and Japan both love history, architecture, food, art, and beautiful everyday life.
+          Europe often celebrates natural self-expression and lively public culture.
+          In Japan, enjoying yourself while keeping the space comfortable for everyone is highly valued.
+          This is not about right or wrong — it is about making your Osaka trip smoother, warmer, and more fun.
+        </p>
+
+        <div class="hero-highlight">
+          <div class="stat">
+            <b>01</b>
+            <span>Respect the shared space</span>
+          </div>
+          <div class="stat">
+            <b>02</b>
+            <span>Read the room gently</span>
+          </div>
+          <div class="stat">
+            <b>03</b>
+            <span>Enjoy Osaka like a local</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="mascot-card">
+        <div class="mascot">🤖✈️</div>
+        <div class="speech">
+          <h2>Pepper says:</h2>
+          <p>
+            “Osaka is friendly and fun! A small touch of quiet consideration will make local people feel happy to welcome you.”
+          </p>
+        </div>
+      </aside>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>One idea to remember</h2>
+        <p>Europe may feel like an open plaza. Japan often feels like a carefully shared room.</p>
+      </div>
+      <div class="phrase-box">
+        <div class="phrase">
+          <b>In Europe</b>
+          <span>Enjoy conversation, space, individuality, and relaxed public life.</span>
+        </div>
+        <div class="phrase">
+          <b>In Japan</b>
+          <span>Enjoy yourself while noticing the people around you.</span>
+        </div>
+        <div class="phrase">
+          <b>In Osaka</b>
+          <span>Friendly city, lively food culture, but still careful manners.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-grid">
+      <article class="topic" id="food">
+        <div class="topic-head">
+          <div class="topic-icon">🍽️</div>
+          <div>
+            <small>01 / Food & Restaurants</small>
+            <h3>Dining is joy — but table time feels different</h3>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side">
+            <h4>🇪🇺 In Europe...</h4>
+            <p>
+              In many European cities, meals can be long, relaxed, and social.
+              Terraces, cafés, wine, conversation, and staying after the meal are part of the experience.
+            </p>
+            <div class="chips">
+              <span class="chip">Slow dining</span>
+              <span class="chip">Café culture</span>
+              <span class="chip">Conversation</span>
+              <span class="chip">Terraces</span>
+            </div>
+          </div>
+          <div class="side">
+            <h4>🇯🇵 In Japan / Osaka...</h4>
+            <p>
+              Dining is also important, but busy restaurants often value smooth turnover.
+              At ramen shops, sushi counters, small cafés, and popular local restaurants, guests are expected to enjoy the meal without staying too long when others are waiting.
+            </p>
+            <div class="chips">
+              <span class="chip">No tipping</span>
+              <span class="chip">Quieter voice</span>
+              <span class="chip">Respect waiting guests</span>
+              <span class="chip">Say “Sumimasen”</span>
+            </div>
+          </div>
+        </div>
+        <div class="manners">
+          <div class="do">
+            <h5>✅ Good manners in Osaka</h5>
+            <ul>
+              <li>Use a softer voice in small restaurants.</li>
+              <li>Say “Sumimasen” to call staff politely.</li>
+              <li>Leave your seat after eating if the shop is crowded.</li>
+              <li>Say “Arigatou” or “Gochisousama” instead of tipping.</li>
+            </ul>
+          </div>
+          <div class="careful">
+            <h5>⚠️ Be careful</h5>
+            <ul>
+              <li>Do not leave tips on the table. Staff may think you forgot money.</li>
+              <li>A long café-style stay is better at spacious cafés or hotel lounges.</li>
+              <li>Do not handle chopsticks, dishes, or shared sauces carelessly.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="topic" id="public">
+        <div class="topic-head">
+          <div class="topic-icon">🏙️</div>
+          <div>
+            <small>02 / Public Spaces</small>
+            <h3>Public spaces are lively in Europe, quieter in Japan</h3>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side">
+            <h4>🇪🇺 In Europe...</h4>
+            <p>
+              Squares, parks, streets, cafés, and markets are places to meet, talk, take photos, and enjoy the city openly.
+              Public space often feels like part of social life.
+            </p>
+            <div class="chips">
+              <span class="chip">Plazas</span>
+              <span class="chip">Open talk</span>
+              <span class="chip">Street culture</span>
+              <span class="chip">Photos</span>
+            </div>
+          </div>
+          <div class="side">
+            <h4>🇯🇵 In Japan / Osaka...</h4>
+            <p>
+              Stations, shopping streets, department stores, and tourist spots are shared spaces.
+              People usually try not to block movement, make loud noise, or disturb others who are passing by.
+            </p>
+            <div class="chips">
+              <span class="chip">Shared space</span>
+              <span class="chip">Keep moving</span>
+              <span class="chip">Carry trash</span>
+              <span class="chip">Photo awareness</span>
+            </div>
+          </div>
+        </div>
+        <div class="manners">
+          <div class="do">
+            <h5>✅ Good manners in Osaka</h5>
+            <ul>
+              <li>Step to the side before checking your phone or map.</li>
+              <li>Use a moderate voice in stations and shopping streets.</li>
+              <li>Carry a small trash bag because bins can be hard to find.</li>
+              <li>Check the background before taking photos.</li>
+            </ul>
+          </div>
+          <div class="careful">
+            <h5>⚠️ Be careful</h5>
+            <ul>
+              <li>Do not stop in the middle of a walkway.</li>
+              <li>Do not film people closely without permission.</li>
+              <li>Do not eat while walking in crowded shopping streets unless the area allows it.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="topic" id="lines">
+        <div class="topic-head">
+          <div class="topic-icon">🚶</div>
+          <div>
+            <small>03 / Lines & Personal Space</small>
+            <h3>In Japan, the line is almost a silent promise</h3>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side">
+            <h4>🇪🇺 In Europe...</h4>
+            <p>
+              Queue culture differs by country. In some places, people ask directly, move flexibly, or communicate clearly to find the right order.
+              Direct communication can be natural.
+            </p>
+            <div class="chips">
+              <span class="chip">Country differences</span>
+              <span class="chip">Direct questions</span>
+              <span class="chip">Flexible flow</span>
+            </div>
+          </div>
+          <div class="side">
+            <h4>🇯🇵 In Japan / Osaka...</h4>
+            <p>
+              In Japan, the order of the line is very important.
+              At stations, convenience stores, bus stops, ticket counters, and popular restaurants, people naturally form a neat line.
+            </p>
+            <div class="chips">
+              <span class="chip">Find the end</span>
+              <span class="chip">No cutting</span>
+              <span class="chip">Wait quietly</span>
+              <span class="chip">Follow floor signs</span>
+            </div>
+          </div>
+        </div>
+        <div class="manners">
+          <div class="do">
+            <h5>✅ Good manners in Osaka</h5>
+            <ul>
+              <li>Look for “最後尾” signs or the end of the queue.</li>
+              <li>Leave a little space in front of you.</li>
+              <li>Wait calmly even if the line moves slowly.</li>
+              <li>Follow arrows and floor markings at stations.</li>
+            </ul>
+          </div>
+          <div class="careful">
+            <h5>⚠️ Be careful</h5>
+            <ul>
+              <li>Do not cut in, even if the line looks unclear.</li>
+              <li>Do not push forward when boarding trains or elevators.</li>
+              <li>A loud complaint may feel uncomfortable in quiet spaces.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="topic" id="transport">
+        <div class="topic-head">
+          <div class="topic-icon">🚆</div>
+          <div>
+            <small>04 / Public Transport</small>
+            <h3>Japanese trains are quiet shared rooms on wheels</h3>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side">
+            <h4>🇪🇺 In Europe...</h4>
+            <p>
+              Talking on trains, moving with large luggage, and relaxed travel behavior can be common, especially on longer journeys.
+              Train culture varies widely across Europe.
+            </p>
+            <div class="chips">
+              <span class="chip">Conversation</span>
+              <span class="chip">Luggage travel</span>
+              <span class="chip">Long journeys</span>
+              <span class="chip">Relaxed mood</span>
+            </div>
+          </div>
+          <div class="side">
+            <h4>🇯🇵 In Japan / Osaka...</h4>
+            <p>
+              Trains and subways are quiet shared spaces.
+              Many people commute, sleep, read, study, or work, so passengers help keep the environment calm.
+            </p>
+            <div class="chips">
+              <span class="chip">No phone calls</span>
+              <span class="chip">Let people exit first</span>
+              <span class="chip">Bag in front</span>
+              <span class="chip">No sound leakage</span>
+            </div>
+          </div>
+        </div>
+        <div class="manners">
+          <div class="do">
+            <h5>✅ Good manners in Osaka</h5>
+            <ul>
+              <li>Speak quietly if you need to talk.</li>
+              <li>Do not make phone calls on the train.</li>
+              <li>Let passengers get off before you board.</li>
+              <li>Place suitcases by your feet or near the side.</li>
+              <li>Wear headphones and keep volume low.</li>
+            </ul>
+          </div>
+          <div class="careful">
+            <h5>⚠️ Be careful</h5>
+            <ul>
+              <li>Large luggage can block doors and aisles.</li>
+              <li>Backpacks can hit people in crowded cars.</li>
+              <li>Priority seats should be offered to those who need them.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="topic" id="heritage">
+        <div class="topic-head">
+          <div class="topic-icon">⛩️</div>
+          <div>
+            <small>05 / Temples & Heritage</small>
+            <h3>Enjoy the beauty — and respect the quiet spirit</h3>
+          </div>
+        </div>
+        <div class="compare">
+          <div class="side">
+            <h4>🇪🇺 In Europe...</h4>
+            <p>
+              Churches, cathedrals, castles, museums, old towns, and historic architecture are often enjoyed as cultural heritage and sightseeing spots.
+              Photography and architectural appreciation are natural parts of travel.
+            </p>
+            <div class="chips">
+              <span class="chip">Cathedrals</span>
+              <span class="chip">Museums</span>
+              <span class="chip">Old towns</span>
+              <span class="chip">Architecture</span>
+            </div>
+          </div>
+          <div class="side">
+            <h4>🇯🇵 In Japan / Osaka...</h4>
+            <p>
+              Shrines and temples are beautiful tourist sites, but they are also active places of prayer.
+              Local people still visit them for festivals, weddings, New Year prayers, and everyday wishes.
+            </p>
+            <div class="chips">
+              <span class="chip">Prayer space</span>
+              <span class="chip">Quiet respect</span>
+              <span class="chip">No-touch heritage</span>
+              <span class="chip">Follow signs</span>
+            </div>
+          </div>
+        </div>
+        <div class="manners">
+          <div class="do">
+            <h5>✅ Good manners in Osaka</h5>
+            <ul>
+              <li>Walk calmly around shrine and temple areas.</li>
+              <li>Follow “No Photography” signs.</li>
+              <li>Do not enter restricted areas.</li>
+              <li>Do not touch cultural properties, gates, statues, or old wooden buildings.</li>
+              <li>Enjoy the silence as part of the culture.</li>
+            </ul>
+          </div>
+          <div class="careful">
+            <h5>⚠️ Be careful</h5>
+            <ul>
+              <li>Do not use sacred spaces as photo stages if people are praying nearby.</li>
+              <li>Do not climb, lean on, or sit on heritage structures.</li>
+              <li>Tripods and flash may be restricted in many places.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Quick comparison</h2>
+        <p>A simple cheat sheet for airport screens, Pepper guidance, and travel groups.</p>
+      </div>
+
+      <table class="summary-table" aria-label="Europe and Japan cultural comparison table">
+        <thead>
+          <tr>
+            <th>Europe</th>
+            <th>Japan / Osaka</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Natural self-expression</td>
+            <td>Enjoy yourself while reading the room</td>
+          </tr>
+          <tr>
+            <td>Long relaxed dining</td>
+            <td>Relax when possible, but give up seats at crowded places</td>
+          </tr>
+          <tr>
+            <td>Public space as a place for conversation</td>
+            <td>Public space as a quiet shared space</td>
+          </tr>
+          <tr>
+            <td>Direct communication</td>
+            <td>Order, timing, and atmosphere are important</td>
+          </tr>
+          <tr>
+            <td>Historic buildings as sightseeing and art</td>
+            <td>Shrines and temples as both heritage and active sacred places</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Useful Japanese phrases</h2>
+        <p>These small words are powerful in Osaka.</p>
+      </div>
+      <div class="phrase-box">
+        <div class="phrase">
+          <b>Sumimasen</b>
+          <span>Excuse me / To call staff politely</span>
+        </div>
+        <div class="phrase">
+          <b>Arigatou gozaimasu</b>
+          <span>Thank you very much</span>
+        </div>
+        <div class="phrase">
+          <b>Gochisousama deshita</b>
+          <span>Thank you for the meal</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="section-title">
+        <h2>Mini manners quiz</h2>
+        <p>Tap to reveal the Osaka-friendly answer.</p>
+      </div>
+
+      <div class="quiz">
+        <div class="quiz-card">
+          <div class="q">🍜</div>
+          <h3>A ramen shop is crowded. You finished eating. What should you do?</h3>
+          <p>Stay for a long chat, or give the seat to the next guest?</p>
+          <details>
+            <summary>Answer</summary>
+            <p>Give the seat to the next guest. In Japan, this shows respect for the restaurant and other customers.</p>
+          </details>
+        </div>
+
+        <div class="quiz-card">
+          <div class="q">🚆</div>
+          <h3>Your phone rings on the train. What is best?</h3>
+          <p>Answer normally, or silence it and call later?</p>
+          <details>
+            <summary>Answer</summary>
+            <p>Silence it and call later. Japanese trains are treated as quiet shared spaces.</p>
+          </details>
+        </div>
+
+        <div class="quiz-card">
+          <div class="q">⛩️</div>
+          <h3>You see a beautiful shrine gate. Can you touch or climb it for a photo?</h3>
+          <p>Looks cool, but is it okay?</p>
+          <details>
+            <summary>Answer</summary>
+            <p>No. Shrines and heritage structures should be treated with respect. Enjoy the photo without touching the structure.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="final">
+        <h2>Enjoy Osaka with respect and curiosity.</h2>
+        <p>
+          Europe’s charm is freedom, natural expression, history, and the joy of culture.
+          Japan’s charm is harmony, quiet consideration, and respect for shared atmosphere.
+          A little awareness of Japanese manners will make your Osaka trip smoother, friendlier, and more memorable.
+          Osaka welcomes visitors who enjoy the city with care.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Made for airport guidance, Pepper robots, digital signage, and visitor-friendly travel support.
+  </footer>
+</body>
+</html>
